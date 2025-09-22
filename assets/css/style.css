@@ -1,0 +1,994 @@
+/*
+***
+** NAME PROJECT : Small Giants
+** AUTHOR : Giorgio Ragusa 
+***
+**  CSS TABLE OF CONTENTS
+**
+**  1.0 - Variables
+**  2.0 - Reset
+**  3.0 - Fonts
+**  4.0 - Globals
+**  5.0 - Header
+**  6.0 - Footer
+**  7.0 - HOME
+**  8.0 - ABOUT
+**  -1 - Responsive Responsive
+**
+****
+*/
+
+/* ==========================================================================
+   1.0  Variables
+   ========================================================================== */
+/* ==========================================================================
+  2.0 - Reset
+   ========================================================================== */
+* {
+  margin-bottom: 0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+  --bs-gutter-x: -0.5rem;
+}
+
+.container {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+}
+
+body .container {
+  max-width: 1200px !important;
+}
+
+/* ==========================================================================
+  3.0 - Fonts
+   ========================================================================== */
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sen-bold {
+  font-family: "Sen", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Jaapokki Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Jaapokki Regular"),
+    url("/11_Small_Giants/webfont/Jaapokki-Regular.woff") format("woff");
+}
+
+/* ==========================================================================
+  4.0 - Globals
+   ========================================================================== */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --sabbia: #fbebcf;
+  --redOrange: #f2480c;
+  --yellow: #fbbe0a;
+  --darkGrey: #161616;
+  --darkRed: #432a24;
+  --green: #5ba05a;
+  --darkYellow: #f9bd0b;
+  --blue: #315bd0;
+  --mediumRed: #a92718;
+  --mediumPink: #e32067;
+  --lightPink: #f4a9cb;
+}
+
+h2 {
+  font-family: "sen", sans-serif;
+  font-weight: 900;
+  color: var(--redOrange);
+  margin: 0px;
+}
+
+h3 {
+  font-family: "sen", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  margin: 0px;
+}
+
+.h2-36{
+font-size: 36px;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--darkGrey);
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 15px;
+}
+
+p.p18{
+  font-size: 18px;
+}
+
+.a-H3{
+  text-decoration: none;
+}
+.btn-primary {
+  --bs-btn-font-family: "Sen", sans-serif;
+  --bs-btn-font-weight: 900;
+  --bs-btn-bg: var(--redOrange);
+  --bs-btn-border-color: none;
+  --bs-btn-hover-bg: var(--blue);
+  --bs-btn-padding-x: 30px;
+  --bs-btn-font-size: 18px;
+  transition-duration: 0.4s;
+  display: flex;
+}
+
+.btn-mediumRed {
+  --bs-btn-bg: var(--mediumRed);
+  --bs-btn-color: var(--sabbia);
+  --bs-btn-hover-bg: var(--black);
+  
+}
+
+.btn-black {
+  --bs-btn-bg: var(--black);
+}
+
+.btn-coming-soon {
+  --bs-btn-bg: var(--black);
+  --bs-btn-hover-bg: var(--black);
+  color: #635F5F ;
+  --bs-btn-hover-color:var(--white);
+}
+
+.btn-chat {
+  width: 56px;
+  height: 56px;
+  --bs-btn-hover-bg: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.btn-mediumPink {
+  --bs-btn-bg: var(--mediumPink);
+  --bs-btn-color: var(--sabbia);
+  --bs-btn-hover-bg: var(--black);
+}
+
+.btn-yellow {
+  --bs-btn-bg: var(--darkYellow);
+  --bs-btn-color: var(--black);
+  pointer-events: none;
+  padding: 5px 40px;
+  box-shadow: 0.3rem 0.3rem #a92718;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.btn-lievito {
+  --bs-btn-bg: var(--lightPink);
+  pointer-events: none;
+  padding: 5px 40px;
+  box-shadow: 0.3rem 0.3rem var(--mediumPink);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.btn-cart{
+  --bs-btn-padding-x: 20px;
+  --bs-btn-padding-y: 0px;
+  --bs-btn-bg: var(--redOrange);
+  --bs-btn-border-color: none;
+  --bs-btn-hover-bg: var(--blue);
+  transition-duration: 0.4s;
+
+}
+
+.container-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.row-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+.col-6{
+position: relative;
+}
+
+.mt-64{
+  margin-top: 64px;
+}
+
+.card{
+  --bs-card-bg: transparent;
+  --bs-card-border-width: none;
+}
+
+.form-select {
+  background-color: transparent;
+  border: 2px solid var(--redOrange);
+  width: 80%;
+}
+
+.form-select-sm{
+  border-radius: 10px;
+  padding: 5px 5px 5px 10px;
+}
+
+.form-select:focus {
+  background-color: var(--sabbia);
+  outline: rgb(0, 0, 0,0.5);
+  /* box-shadow: ; */
+}
+
+.fs-11{
+font-size: 11px;
+}
+
+.fs-12{
+  font-size: 12px;
+}
+/* ==========================================================================
+   5.0 - Header
+   ========================================================================== */
+
+header.site-header {
+  background-color: var(--sabbia);
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+nav.navbar {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  border-bottom: 1px solid #f7c9b1;
+  background-color: var(--sabbia);
+  height: 100px;
+  justify-content: center;
+}
+
+.topbar {
+  height: 35px;
+  width: 100vw;
+  background-color: var(--black);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  display: none;
+}
+
+.topbar span {
+  color: var(--white);
+  text-align: center;
+  font-size: 18px;
+  position: relative;
+}
+
+/* .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 50px;
+} */
+
+.brand-logo {
+  width: 100px;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-nav {
+  gap: 12px;
+}
+
+img.navbar-icon {
+  width: 20px;
+}
+
+img.navbar-icon:hover {
+  width: 22px;
+}
+
+.navbar-icon-container {
+  display: flex;
+  background-color: #faf3d7;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-icons_wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+ul.navbar-nav {
+  font-family: "jaapokki regular", sans-serif;
+  --bs-nav-link-color: var(--black);
+  font-size: 20px;
+}
+
+ul.navbar-nav .nav-link:hover {
+  text-decoration: underline;
+}
+
+#insetti {
+  -webkit-text-stroke: 1px var(--mediumRed);
+}
+
+ul.navbar-nav .nav-link:hover #insetti {
+  text-decoration: underline;
+}
+
+#lievito {
+  -webkit-text-stroke: 1px var(--mediumPink);
+}
+
+ul.navbar-nav .nav-link:hover #lievito {
+  text-decoration: underline;
+}
+
+#lievito:hover {
+  text-decoration: underline;
+}
+.nav-link.dropdown-toggle::after {
+  display: none;
+}
+
+svg.icon.icon-caret {
+  height: 6px;
+}
+
+a.nav-link {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+a.nav-link.insetti,
+a.nav-link.insetti.show {
+  color: var(--darkYellow);
+}
+
+a.nav-link.lievito,
+a.nav-link.lievito.show {
+  color: var(--lightPink);
+}
+
+ul.dropdown-menu.show {
+  background-color: var(--sabbia);
+  border: 3px solid black;
+  --bs-dropdown-border-radius: unset;
+  --bs-dropdown-link-hover-bg: unset;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  padding: 8px 8px;
+}
+
+a.dropdown-item:hover {
+  text-decoration: underline;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  --bs-dropdown-link-active-bg: none;
+  text-decoration: underline;
+  --bs-dropdown-link-active-color: var(--black);
+}
+
+/* ==========================================================================
+  6.0 - Footer
+   ========================================================================== */
+/* ==========================================================================
+  7.0 - HOME
+   ========================================================================== */
+main.site-main {
+  background-color: var(--sabbia);
+  margin-top: 100px;
+}
+
+.icon-chat {
+  color: white;
+}
+
+.h2-hero {
+  font-size: 72px;
+  font-weight: 900;
+}
+
+#evidenzia-giallo {
+  background-color: var(--darkYellow);
+}
+
+#em-rosa {
+  background-color: var(--lightPink);
+}
+
+img.img-hero {
+  height: 400px;
+  transform: rotate3d(1, 1, -1, 20deg);
+}
+
+section.hero {
+  display: flex;
+  height: 90vh;
+  padding-top: 10px;
+  justify-content: center;
+  width: 100vw;
+}
+
+.container-hero {
+  display: flex;
+  align-items: center;
+}
+
+.hero-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icona-freccia {
+  width: 15px;
+  margin-left: 10px;
+}
+
+.stelline {
+  margin-top: 30px;
+  padding-left: 15px;
+  display: flex;
+}
+
+.icon-stellina {
+  width: 23px;
+}
+
+.icon-stellina-sm{
+  width: 12px;
+}
+
+.wrapper-stelline {
+  margin-right: 25px;
+}
+
+.wrapper-p-stelline {
+  height: 25px;
+  font-size: 16px;
+  line-height: 20px;
+  font-family: Poppins, sans-serif;
+}
+/* ========================== 
+Section 2*/
+
+section.futuro {
+  background-color: var(--sabbia);
+  display: flex;
+  justify-content: center;
+}
+
+h2.futuro {
+  text-align: center;
+  font-size: 32px;
+}
+
+.box-insetti {
+  display: flex;
+  background-color: var(--darkYellow);
+  height: 300px;
+  margin-top: 15px;
+}
+
+.container-box-insetti {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 5px;
+  gap: 15px;
+}
+
+.container-features {
+  display: flex;
+  gap: 15px;
+}
+
+.box-1 {
+  width: 15%;
+  padding: 15px 5px;
+}
+.box-2 {
+  width: 20%;
+  padding: 15px 5px;
+}
+.box-3 {
+  width: 25%;
+  padding: 15px 5px;
+}
+
+.box-4 {
+  width: auto;
+  padding: 15px 5px;
+}
+
+.feature-insetti {
+  background-color: var(--sabbia);
+  display: flex;
+  min-height: 70px;
+  color: var(--mediumRed);
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+}
+
+.h2-insetti {
+  color: var(--mediumRed);
+  font-size: 30px;
+}
+
+.p-futuro {
+  font-size: 18px;
+  padding: 25px;
+}
+
+.grillo-box {
+  padding: 15px;
+}
+
+.box-lievito {
+  background-color: var(--lightPink);
+  position: relative;
+}
+
+.h2-lievito,
+.h3-lievito {
+  color: var(--mediumPink);
+}
+
+.badge-container {
+  background-color: var(--blue);
+  position: absolute;
+  transform: rotate(-350deg);
+  right: 13px;
+  top: 32px;
+  box-shadow: 5px 5px;
+  color: var(--sabbia);
+}
+
+.badge {
+  text-transform: uppercase;
+  --bs-badge-border-radius: 0px;
+  font-size: 24px;
+  font-family: "Jaapokki Regular", sans-serif;
+  font-weight: 500;
+  padding: 5px 5px;
+}
+
+.box-coming_soon {
+  background-color: #635f5f;
+}
+
+.h2-coming_soon {
+  color: #000000;
+}
+
+.box-loading {
+  width: 90%;
+  background-color: #000000;
+  color: #635F5F;
+  display: flex;
+  justify-content: center;
+}
+
+.h3-loading {
+  text-align: center;
+}
+
+/* Section Discovery Pack */
+
+section.discovery-pack {
+ display: flex;
+ justify-content: center;
+ margin-top: 200px;
+}
+
+.img-discovery {
+  width: 90%;
+}
+
+/* .prod-container{
+  height: 288px;
+  width: 288px;
+  display: flex; 
+  border-radius: 2rem;
+}
+*/
+
+/* .prod-img-1{
+  background-image: url(/11_Small_Giants/img/cracker_bites_c05fea28-d4d2-41e9-9132-3a4d935e8865.webp);
+  object-fit: cover;
+} */
+
+.h3-discovery {
+  color: var(--redOrange);
+  font-size: 45px;
+  line-height: 50px;
+  text-transform: uppercase;
+  width: 75%;
+}
+
+.badge.prima-volta{
+  color: var(--sabbia) ;
+}
+
+.badge-container.bc-prima-volta{
+  top: -45px;
+  right: 80px;
+}
+
+.prezzo{
+  font-size: 24px;
+}
+
+.fs-13{
+  font-size: 13px;
+
+}
+
+section.piu-apprezzati{
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title{
+ font-weight: 700; 
+ min-height: 60px;
+}
+
+.icon-cart{
+  width: 36px;
+  height: 36px;
+}
+
+.cart-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+section.media{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.box-blu{
+  background-color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin: 0 10px;
+}
+
+.p-box-blu{
+color: white;
+text-align: center;
+margin-bottom: 0px;
+}
+
+.loghi-media{
+  filter: invert();
+  height: 40px;
+}
+
+.span-d-block{
+  display: block;
+}
+
+.media-scrolling{
+  height: 70px;
+  background-color: white;
+  width: 104%;
+}
+
+/* inizio-marquee */
+
+.orb {
+  width: 50px;
+  height: 50px;
+  background: #999;
+  border-radius: 50px;
+  display: inline-block;
+  margin: 0 24.7px;
+  transition: all .2s ease-out;
+}
+
+.orb:hover {
+  transform: scale(1.2);
+  opacity: .5;
+  cursor: pointer;
+}
+
+.red {background:red;}
+.yellow {background:yellow;}
+.blue {background:blue;}
+.orange {background:orange;}
+.purple {background:purple;}
+.green {background:green;}
+
+.marquee {
+  height: 200px;
+  width: 800px;
+  border: 2px solid #eee;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  margin: 200px auto;
+}
+
+.marquee--inner {
+  display: block;
+  width: 200%;
+  margin: 70px 0;
+  position: absolute;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee--inner:hover {
+  animation-play-state: paused;
+}
+
+/*.half {
+  float: left;
+  width: 10%;
+}*/
+
+span {
+  float: left;
+  width: 50%;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
+/* ==========================================================================
+  -1 - Responsive
+   ========================================================================== */
+/* XXX-Large devices (large desktops, less than 1800px) */
+
+@media (max-width: 1799.98px) {
+  /* ==========================================================================
+     1.0  Variables
+     ========================================================================== */
+  /* ==========================================================================
+      2.0 - Reset
+       ========================================================================== */
+  /* ==========================================================================
+      3.0 - Fonts
+       ========================================================================== */
+  /* ==========================================================================
+      4.0 - Globals
+       ========================================================================== */
+  /* ==========================================================================
+       5.0 - Header
+       ========================================================================== */
+  /* ==========================================================================
+      6.0 - Footer
+       ========================================================================== */
+  /* ==========================================================================
+      7.0 - HOME
+       ========================================================================== */
+}
+
+/* XX-Large devices (large desktops, less than 1600px) */
+
+@media (max-width: 1599.98px) {
+  /* ==========================================================================
+     1.0  Variables
+     ========================================================================== */
+  /* ==========================================================================
+    2.0 - Reset
+     ========================================================================== */
+  /* ==========================================================================
+    3.0 - Fonts
+     ========================================================================== */
+  /* ==========================================================================
+    4.0 - Globals
+     ========================================================================== */
+  /* ==========================================================================
+     5.0 - Header
+     ========================================================================== */
+  /* ==========================================================================
+    6.0 - Footer
+     ========================================================================== */
+  /* ==========================================================================
+    7.0 - HOME
+     ========================================================================== */
+}
+
+/* X-Large devices (large desktops, less than 1400px) */
+
+@media (max-width: 1399.98px) {
+  /* ==========================================================================
+     1.0  Variables
+     ========================================================================== */
+  /* ==========================================================================
+    2.0 - Reset
+     ========================================================================== */
+  /* ==========================================================================
+    3.0 - Fonts
+     ========================================================================== */
+  /* ==========================================================================
+    4.0 - Globals
+     ========================================================================== */
+  /* ==========================================================================
+     5.0 - Header
+     ========================================================================== */
+  /* ==========================================================================
+    6.0 - Footer
+     ========================================================================== */
+  /* ==========================================================================
+    7.0 - HOME
+     ========================================================================== */
+}
+
+/* Large devices (desktops, less than 1200px) */
+
+@media (max-width: 1199.98px) {
+  /* ==========================================================================
+     1.0  Variables
+     ========================================================================== */
+  /* ==========================================================================
+    2.0 - Reset
+     ========================================================================== */
+  /* ==========================================================================
+    3.0 - Fonts
+     ========================================================================== */
+  /* ==========================================================================
+    4.0 - Globals
+     ========================================================================== */
+  /* ==========================================================================
+     5.0 - Header
+     ========================================================================== */
+  /* ==========================================================================
+    6.0 - Footer
+     ========================================================================== */
+  /* ==========================================================================
+    7.0 - HOME
+     ========================================================================== */
+}
+
+/* Medium devices (tablets, less than 992px) */
+
+@media (max-width: 991.98px) {
+  /* ==========================================================================
+     1.0  Variables
+     ========================================================================== */
+  /* ==========================================================================
+    2.0 - Reset
+     ========================================================================== */
+  /* ==========================================================================
+    3.0 - Fonts
+     ========================================================================== */
+
+  /* ==========================================================================
+    4.0 - Globals
+     ========================================================================== */
+  /* ==========================================================================
+     5.0 - Header
+     ========================================================================== */
+  /* ==========================================================================
+    6.0 - Footer
+     ========================================================================== */
+  /* ==========================================================================
+    7.0 - HOME
+     ========================================================================== */
+}
+
+/* Small devices (landscape phones, less than 768px) */
+
+@media (max-width: 768.98px) {
+  /* ==========================================================================
+     1.0  Variables
+     ========================================================================== */
+  /* ==========================================================================
+    2.0 - Reset
+     ========================================================================== */
+  /* ==========================================================================
+    3.0 - Fonts
+     ========================================================================== */
+  /* ==========================================================================
+    4.0 - Globals
+     ========================================================================== */
+  /* ==========================================================================
+     5.0 - Header
+     ========================================================================== */
+  /* ==========================================================================
+    6.0 - Footer
+     ========================================================================== */
+  /* ==========================================================================
+    7.0 - HOME
+     ========================================================================== */
+}
+
+/* Small applies to x-small devices (portrait phones, less than 576px) */
+
+@media (max-width: 575.98px) {
+  /* ==========================================================================
+     1.0  Variables
+     ========================================================================== */
+  /* ==========================================================================
+    2.0 - Reset
+     ========================================================================== */
+  /* ==========================================================================
+    3.0 - Fonts
+     ========================================================================== */
+  /* ==========================================================================
+    4.0 - Globals
+     ========================================================================== */
+  /* ==========================================================================
+     5.0 - Header
+     ========================================================================== */
+  /* ==========================================================================
+    6.0 - Footer
+     ========================================================================== */
+  /* ==========================================================================
+    7.0 - HOME
+     ========================================================================== */
+}
+
+/* Small applies to x-small devices (portrait phones, less than 321px) */
+
+@media (max-width: 320.98px) {
+  /* ==========================================================================
+     1.0  Variables
+     ========================================================================== */
+  /* ==========================================================================
+    2.0 - Reset
+     ========================================================================== */
+  /* ==========================================================================
+    3.0 - Fonts
+     ========================================================================== */
+  /* ==========================================================================
+    4.0 - Globals
+     ========================================================================== */
+  /* ==========================================================================
+     5.0 - Header
+     ========================================================================== */
+  /* ==========================================================================
+    6.0 - Footer
+     ========================================================================== */
+  /* ==========================================================================
+    7.0 - HOME
+     ========================================================================== */
+}
